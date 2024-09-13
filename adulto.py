@@ -16,11 +16,14 @@ def ingreso_edad ():
         edad = input("Ingrese su edad: ")
         edad = int(edad)
         
-        if edad < 0:
+        if edad < 0 or edad > 120:
             raise EdadError(edad)
         
-        else:
-            return edad
+        elif edad >= 18:
+            print("El usuario corresponde a un Adulto")
+            
+        elif edad >0 and edad < 18:
+            print("El usuario no corresponde a un Adulto")
         
     #Por defecto Python lanzará el error de tipo ValueError al intentar volver un string no numerico a un numero entero.
     #Se establece de este modo un remplazo del error lanzado por defecto por nuestro error personalizado, EdadError. 
@@ -33,5 +36,5 @@ try:
     nueva_edad = ingreso_edad()
 
 except EdadError as e:
-        print(f"{type(e).__name__} - {e}.\n Porfavor ingrese una edad validad")
+        print(f"{type(e).__name__} - {e}.\n Porfavor ingrese una edad valida")
         
