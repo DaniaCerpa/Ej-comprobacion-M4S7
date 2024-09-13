@@ -9,8 +9,8 @@ class EdadError(Exception):
 #Creación de función 
 def ingreso_edad ():
     
-    """ Esta función busca conseguir la edad del usuario y validar esta a traves de un bloque try-except.
-        Si la edad no es valida retornara un error del tipo EdadError
+    """ Esta función busca conseguir la edad del usuario, categorizandolo como Adulto o No Adulto.  
+        Si la edad no es valida retornara un error del tipo EdadError.
     """
     try:
         edad = input("Ingrese su edad: ")
@@ -22,7 +22,7 @@ def ingreso_edad ():
         elif edad >= 18:
             print("El usuario corresponde a un Adulto")
             
-        elif edad >0 and edad < 18:
+        elif edad < 18:
             print("El usuario no corresponde a un Adulto")
         
     #Por defecto Python lanzará el error de tipo ValueError al intentar volver un string no numerico a un numero entero.
